@@ -1,0 +1,8 @@
+{
+  "name": "countries-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/lucas54neves/countries-api.git",
+  "author": "Lucas Neves <lucas54neves@outlook.com>",
+  "license": "MIT"
+}
