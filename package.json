@@ -4,5 +4,9 @@
   "main": "index.js",
   "repository": "https://github.com/lucas54neves/countries-api.git",
   "author": "Lucas Neves <lucas54neves@outlook.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "express": "^4.17.1"
+  },
+  "type": "module"
 }
