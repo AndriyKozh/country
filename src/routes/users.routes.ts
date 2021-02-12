@@ -3,7 +3,7 @@ import createUser from '../services/createUser'
 
 const usersRoute = Router()
 
-usersRoute.post('/', (request, response) => {
+usersRoute.post('/new', (request, response) => {
   const { name, email, password } = request.body
 
   const user = createUser({
