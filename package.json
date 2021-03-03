@@ -6,6 +6,7 @@
   "author": "Lucas Neves <lucas54neves@outlook.com>",
   "license": "MIT",
   "scripts": {
+    "dev": "ts-node src/index.ts",
     "dev:server": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules src/server.ts",
     "build": "tsc"
   },
@@ -20,7 +21,11 @@
     "express": "^4.17.1",
     "nodemon": "^2.0.7",
     "prettier": "^2.2.1",
+    "prisma": "2.18.0",
     "ts-node-dev": "^1.1.1",
     "typescript": "^4.1.3"
+  },
+  "dependencies": {
+    "@prisma/client": "^2.18.0"
   }
 }

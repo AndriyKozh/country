@@ -1,0 +1,71 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Country {
+  id             Int            @id @default(autoincrement())
+  name           String
+  topLevelDomain String[]
+  alpha2Code     String
+  alpha3Code     String
+  callingCodes   String[]
+  capital        String
+  altSpellings   String[]
+  region         String
+  subregion      String
+  population     Int
+  latlng         Int[]
+  demonym        String
+  area           Int
+  gini           Float
+  timezones      String[]
+  borders        String[]
+  nativeName     String
+  numericCode    String
+  flag           String
+  cioc           String
+  translations   Translation[]
+  currencies     Currency[]
+  languages      Language[]
+  regionalBlocs  RegionalBloc[]
+}
+
+model Translation {
+  translateTo String
+  translated  String
+  countryId   Int
+  country     Country @relation(fields: [countryId], references: [id])
+
+  @@id([countryId, translateTo, translated])
+}
+
+model Currency {
+  id        Int       @id @default(autoincrement())
+  code      String
+  symbol    String
+  name      String
+  countries Country[]
+}
+
+model Language {
+  id         Int       @id @default(autoincrement())
+  iso639_1   String
+  iso639_2   String
+  name       String
+  nativeName String
+  countries  Country[]
+}
+
+model RegionalBloc {
+  id            Int       @id @default(autoincrement())
+  acronym       String
+  name          String
+  otherAcronyms String[]
+  otherNames    String[]
+  countries     Country[]
+}
