@@ -1,21 +1,16 @@
 import { Router } from 'express'
-// import countries from '../mock/countries.json'
-
-type CountryType = {
-  name: string;
-  region: string;
-}
-
-const countries: CountryType[] = []
+import CountriesRepository from '../repositories/CountriesRepository'
 
 const countriesRoute = Router()
 
-countriesRoute.get('/', (request, response) => {
+console.log('OKKK')
+
+countriesRoute.get('/', async (request, response) => {
+  const countriesRepository = new CountriesRepository()
+
+  const countries = await countriesRepository.findAll()
+
   return response.json(countries)
-})
-
-countriesRoute.post('/', (request, response) => {
-
 })
 
 export default countriesRoute
