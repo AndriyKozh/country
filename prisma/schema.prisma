@@ -11,8 +11,8 @@ model Country {
   id             Int            @id @default(autoincrement())
   name           String
   topLevelDomain String[]
-  alpha2Code     String
-  alpha3Code     String
+  alpha2Code     String         @unique
+  alpha3Code     String         @unique
   callingCodes   String[]
   capital        String
   altSpellings   String[]
@@ -46,16 +46,16 @@ model Translation {
 
 model Currency {
   id        Int       @id @default(autoincrement())
-  code      String
-  symbol    String
+  code      String    @unique
+  symbol    String    @unique
   name      String
   countries Country[]
 }
 
 model Language {
   id         Int       @id @default(autoincrement())
-  iso639_1   String
-  iso639_2   String
+  iso639_1   String    @unique
+  iso639_2   String    @unique
   name       String
   nativeName String
   countries  Country[]
