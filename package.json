@@ -6,14 +6,15 @@
   "author": "Lucas Neves <lucas54neves@outlook.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "ts-node src/index.ts",
+    "dev": "ts-node src/server.ts",
     "start": "ts-node src/server.ts",
-    "dev:server": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules src/server.ts",
-    "build": "tsc"
+    "dev:server": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules src/server.ts"
   },
   "devDependencies": {
     "@types/express": "^4.17.11",
     "@typescript-eslint/eslint-plugin": "^4.14.2",
+    "@vercel/ncc": "^0.27.0",
+    "@vercel/node": "^1.9.0",
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-prettier": "^7.2.0",
