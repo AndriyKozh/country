@@ -1,11 +1,10 @@
 import { Router } from 'express'
+import { NowRequest, NowResponse } from '@vercel/node'
 import CountriesRepository from '../repositories/CountriesRepository'
 
 const countriesRoute = Router()
 
-console.log('OKKK')
-
-countriesRoute.get('/', async (request, response) => {
+countriesRoute.get('/', async (request: NowRequest, response: NowResponse) => {
   const countriesRepository = new CountriesRepository()
 
   const countries = await countriesRepository.findAll()
