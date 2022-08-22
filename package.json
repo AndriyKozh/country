@@ -2,8 +2,8 @@
   "name": "countries-api",
   "version": "1.0.0",
   "main": "src/index.js",
-  "repository": "https://github.com/lucas54neves/countries-api.git",
-  "author": "Lucas Neves <lucas54neves@outlook.com>",
+  "repository": "https://github.com/AndriyKozh/country.git",
+  "author": "Andriy Kozh <andriykozh32@gmail.com>",
   "license": "MIT",
   "scripts": {
     "dev": "ts-node src/server.ts",
